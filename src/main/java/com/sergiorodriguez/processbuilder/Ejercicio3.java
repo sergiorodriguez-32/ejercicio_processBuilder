@@ -3,17 +3,17 @@ package com.sergiorodriguez.processbuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
-public class Ejercicio2 {
+public class Ejercicio3 {
 
-    public static void comandoValido() {
-        // /w es el argumento de dir
-        ejecutarComando("cmd.exe", "/c", "dir", "/w");
-    }
+    public static void pedirComandoYEjecutar() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce un comando (ej: dir, dir /w): ");
+        String comando = scanner.nextLine();
 
-    public static void comandoInexistente() {
-        // comando inventado con argumento, para forzar el error
-        ejecutarComando("comandoquenoexiste", "-x");
+        // toda la linea se pasa tal cual a cmd.exe /c, que la interpreta el mismo
+        ejecutarComando("cmd.exe", "/c", comando);
     }
 
     private static void ejecutarComando(String... comando) {

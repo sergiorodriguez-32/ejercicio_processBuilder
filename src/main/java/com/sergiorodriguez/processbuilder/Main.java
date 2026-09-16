@@ -14,5 +14,8 @@ public class Main {
 
         System.out.println("\n=== Ejercicio 2: comando inexistente con argumentos ===");
         Ejercicio2.comandoInexistente();
+
+        System.out.println("\n=== Ejercicio 3: comando pedido por consola ===");
+        Ejercicio3.pedirComandoYEjecutar();
     }
 }
