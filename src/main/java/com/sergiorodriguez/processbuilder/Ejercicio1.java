@@ -1,17 +1,19 @@
+package com.sergiorodriguez.processbuilder;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Ejercicio2 {
+public class Ejercicio1 {
 
     public static void comandoValido() {
-        // /w es el argumento de dir (formato ancho)
-        ejecutarComando("cmd.exe", "/c", "dir", "/w");
+        // dir es interno de cmd.exe, no un .exe independiente
+        ejecutarComando("cmd.exe", "/c", "dir");
     }
 
     public static void comandoInexistente() {
-        // comando inventado con argumento, para forzar el error
-        ejecutarComando("comandoquenoexiste", "-x");
+        // comando inventado para forzar el error
+        ejecutarComando("comandoquenoexiste");
     }
 
     private static void ejecutarComando(String... comando) {
